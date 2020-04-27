@@ -108,7 +108,7 @@ function regChk(){
                      </tr>
                      <tr>
                         <th rowspan="2">주소:</th>
-                        <td colspan="3"><input type="text" class="form-control" name="address1" ></td>
+                        <td colspan="3"><input type="text" class="form-control" name="address1" required></td>
                      </tr>
                      <tr>
                         <td colspan="3"><input type="text" class="form-control" name="address2"></td>

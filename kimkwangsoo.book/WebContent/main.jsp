@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    <%@ taglib prefix ='c' uri='http://java.sun.com/jsp/jstl/core' %>
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -26,16 +27,20 @@
 	if(session.getAttribute("userId")==null) {
 %>
 	    <li><a href='./user/login.jsp'>login</a></li>
+	    <li><a href='./user/join.jsp'>회원가입</a></li>
 <%
 	} else {
 %>
+
 		<li><%= session.getAttribute("userId") %>님, 환영합니다.</li>
 		<li><a href='./user/logoutProc.jsp'>logout</a></li>
+		<li><a href='./mypage/userUpDel.jsp'>마이페이지</a></li>
 <%
 	}
 %>
-       <li><a href='#'>마이페이지</a></li>
-       <li><a href='./user/join.jsp'>회원가입</a></li>
+
+
+
        <li><a href='#'>장바구니</a></li>
      </ul> 
      

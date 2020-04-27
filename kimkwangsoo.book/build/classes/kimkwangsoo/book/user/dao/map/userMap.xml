@@ -23,4 +23,14 @@
 			#{userReg,jdbcType=DATE}
 		)
 	</insert>
+	
+	<update id='updateUser' parameterType='String' >
+	update users
+	set   
+			user_pwd= #{userPwd}, 
+			user_email=#{userEmail},
+			user_tel=#{userTel},
+			user_addr=#{userAddress}
+	where	user_id =#{userId}
+	</update>
 </mapper>

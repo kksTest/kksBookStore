@@ -8,7 +8,6 @@
 <%@ page import="kimkwangsoo.book.user.service.UserServiceImpl" %>
 <%@ page import="kimkwangsoo.book.user.domain.User" %>
 <%@ page import="java.net.URLEncoder" %>
-<script>alert("a");</script>
 <%
 	request.setCharacterEncoding("utf-8");
 	UserService userService = new UserServiceImpl();
