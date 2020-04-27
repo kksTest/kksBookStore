@@ -11,13 +11,13 @@
 	User chkExistUser = new User();
 	User user = new User();
 	
-	String errorMsg = "";
-	
+	String errMsg = "";
+
 	String userId = request.getParameter("userId");
 	
 	chkExistUser = userService.getUser(userId);
 	if(chkExistUser!=null) {
-		errorMsg = "이미 존재하는 아이디입니다.";
+		errMsg = "중복처리";
 	} else {
 	
 		String userName = request.getParameter("userName");
@@ -37,13 +37,13 @@
 		userService.addUser(user);
 	}
 	
-	if(errorMsg=="") {
+	if(errMsg=="") {
 %>
 		<c:redirect url="../main.jsp" />
 <%		
 	} else {
 %>
-		<c:redirect url="./join.jsp?msg=Already Used."/>
+		<c:redirect url="./join.jsp?errMsg=1"/>
 <%		
 	}
 %>

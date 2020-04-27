@@ -12,19 +12,18 @@
 	User user = new User();
 	String userId = request.getParameter("userId");
 	String userPwd = request.getParameter("userPwd");
+	String remId =request.getParameter("remember");
+	
 	String chkPwd = "";
 	
-	String errorMsg = "";
-	String errorMsgType1 = "";
-	String errorMsgType2 = "";
-	String errorMsgType3 = "";
-	String errorMsgType4 = "";
+	String errMsg = "";
+	String errMsg1 = "";
+	String errMsg2 = "";
 	
 	user = userService.getUser(userId);
 	
-	out.println(userId + "<br>");
-	out.println(user + "<br>");
 	
+
 	if(user!=null) {
 		chkPwd = userService.getUser(userId).getUserPwd();
 		if(userPwd.equals(chkPwd)) {
@@ -39,33 +38,20 @@
 <% 			
 			}
 
-		} else {
-			errorMsg = "패스워드가 틀렸습니다.";
-%>
-			<c:redirect url="./login.jsp?errorMsgType1=true" />
+		} else { 	
+%>	
+			<c:redirect url="./login.jsp?errMsg1=Check Password" />
 <%
 		}
 	} else {
-		errorMsg = "존재하지 않는 아이디입니다.";
 %>
-		<c:redirect url="./login.jsp?errorMsgType2=true" />
+		<c:redirect url="./login.jsp?errMsg2=Check ID" />
 <%
 	}
+	%>
 	
-	if(userId.equals("")) {
-		errorMsg = "아이디를 입력해 주십시오.";
-%>
-		<c:redirect url="./login.jsp?errorMsgType3=true" />
 <%
+	if(remId != null ){
+		response.sendRedirect("../main.jsp");
 	}
-	
-	if(userPwd.equals("")) {
-		errorMsg = "비밀번호를 입력해 주십시오.";
-%>
-		<c:redirect url="./login.jsp?errorMsgType4=true" />
-<%
-	}
-	
-	request.setAttribute("errorMsg", "error");
-	response.sendRedirect("./login.jsp?errorMsg=" + URLEncoder.encode(errorMsg, "utf-8"));
 %>
