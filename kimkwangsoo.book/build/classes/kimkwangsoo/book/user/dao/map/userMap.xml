@@ -9,13 +9,18 @@
 	</select>
 	
 	<insert id="addUser" parameterType="user">
-		insert into users values (
+		insert into users
+		(user_id, user_pwd, user_name, user_email, user_tel, user_addr, 
+		user_birth,user_reg_date)
+		values (
 			#{userId, jdbcType=VARCHAR},
 			#{userPwd, jdbcType=VARCHAR},
 			#{userName, jdbcType=VARCHAR},
 			#{userEmail, jdbcType=VARCHAR},
 			#{userTel, jdbcType=VARCHAR},
-			#{userAddress, jdbcType=VARCHAR}
+			#{userAddress, jdbcType=VARCHAR},
+			#{userBirth,jdbcType=DATE},
+			#{userReg,jdbcType=DATE}
 		)
 	</insert>
 </mapper>
