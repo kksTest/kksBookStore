@@ -109,10 +109,24 @@ function regChk(){
                      <tr>
                         <th rowspan="2">주소:</th>
                         <td colspan="3"><input type="text" class="form-control" name="address1" required></td>
-                     </tr>
+                     </tr>            
                      <tr>
                         <td colspan="3"><input type="text" class="form-control" name="address2"></td>
                      </tr>
+                    
+                     <!--클래스 스테이터스 히든속성 -->
+                     <tr>
+                        <td colspan="3">
+                        <input type="hidden" 
+                        class="form-control" name="userClass" value ='U' ></td>
+                     </tr>
+                       <tr>
+                        <td colspan="3">
+                        <input type="hidden" 
+                        class="form-control" name="userStatus" value ='A' ></td>
+                     </tr>
+                     
+                     
                   </table>
                   <button type="button" class="btn btn-danger" onclick="location.href='../main.jsp'">메인으로</button>
 			      <button type="submit" class="btn btn-primary" onclick="regChk()">회원가입</button>

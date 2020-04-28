@@ -23,7 +23,7 @@
 	if (chkExistUser != null) {
 		errMsg = "중복처리";
 	} else {
-
+		
 		String userName = request.getParameter("userName");
 		String userPwd = request.getParameter("userPwd");
 		String chkPwd = request.getParameter("chkPwd");
@@ -31,7 +31,8 @@
 		String userBirth = request.getParameter("userBirth");
 		String tel = request.getParameter("tel");
 		String address = request.getParameter("address1") + " " + request.getParameter("address2");
-
+		String userClass= request.getParameter("userClass");
+		String userStatus = request.getParameter("userStatus");
 		java.sql.Date sqld = java.sql.Date.valueOf(userBirth);//스트링타입 sql로 변환
 		
 		user.setUserId(userId);
@@ -41,6 +42,8 @@
 		user.setUserTel(tel);
 		user.setUserBirth(sqld);
 		user.setUserAddress(address);
+		user.setUserClass(userClass);
+		user.setUserStatus(userStatus);
 		user.setUserReg(Date.valueOf(date));
 		userService.addUser(user);
 	}

@@ -34,7 +34,7 @@ public class UserServiceImpl implements UserService {
 	}
 	
 	@Override
-	public void deleteUser(int userNum) {
-		this.userDao.deleteUser(userNum);
+	public void deleteUser(User user) {
+		this.userDao.deleteUser(user);
 	}
 }

@@ -34,7 +34,7 @@ public class UserDaoImpl implements UserDao {
 	}
 	
 	@Override
-	public void deleteUser(int userNum) {
-		this.userMap.deleteUser(userNum);
+	public void deleteUser(User user) {
+		this.userMap.deleteUser(user);
 	}
 }

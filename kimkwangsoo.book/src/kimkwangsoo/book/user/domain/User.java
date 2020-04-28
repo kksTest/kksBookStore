@@ -11,7 +11,9 @@ public class User {
 	private String userAddress;
 	private Date userBirth;
 	private Date userReg;
-
+	private String userClass;
+	private String	userStatus;
+	
 	public String getUserId() {
 		return userId;
 	}
@@ -74,6 +76,22 @@ public class User {
 
 	public void setUserReg(Date userReg) {
 		this.userReg = userReg;
+	}
+
+	public String getUserClass() {
+		return userClass;
+	}
+
+	public void setUserClass(String userClass) {
+		this.userClass = userClass;
+	}
+
+	public String getUserStatus() {
+		return userStatus;
+	}
+
+	public void setUserStatus(String userStatus) {
+		this.userStatus = userStatus;
 	}
 
 	public String toString() {

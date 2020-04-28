@@ -9,5 +9,5 @@ public interface UserMap {
 	List<User> getUsers();
 	void addUser(User user);
 	void updateUser(User user);
-	void deleteUser(int userNum);
+	void deleteUser(User user);
 }

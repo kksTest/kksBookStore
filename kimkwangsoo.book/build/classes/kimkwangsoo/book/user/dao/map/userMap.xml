@@ -11,7 +11,7 @@
 	<insert id="addUser" parameterType="user">
 		insert into users
 		(user_id, user_pwd, user_name, user_email, user_tel, user_addr, 
-		user_birth,user_reg_date)
+		user_birth,user_reg_date,user_class,user_status)
 		values (
 			#{userId, jdbcType=VARCHAR},
 			#{userPwd, jdbcType=VARCHAR},
@@ -20,7 +20,9 @@
 			#{userTel, jdbcType=VARCHAR},
 			#{userAddress, jdbcType=VARCHAR},
 			#{userBirth,jdbcType=DATE},
-			#{userReg,jdbcType=DATE}
+			#{userReg,jdbcType=DATE},
+			#{userClass,jdbcType=VARCHAR},
+			#{userStatus,jdbcType=VARCHAR}
 		)
 	</insert>
 	
@@ -33,4 +35,12 @@
 			user_addr=#{userAddress}
 	where	user_id =#{userId}
 	</update>
+	
+	<update id ='deleteUser' parameterType='String'>
+		update users
+		set 
+			user_status =#{userStatus}
+		where user_id =#{userId}
+	</update>
+	
 </mapper>

@@ -50,7 +50,7 @@
     logo 이미지</a></div><br>
     
     <!-- $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$ 검색창 $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$ --><br>
-    <div style="text-align:center;">
+    <div style="text-align:center;" >
     <span class='search_box'>
       <input type='text' class='input_text' placeholder="검색할 책을 입력하세요"/></span>
       <button type='submit' class='search_bt'>
